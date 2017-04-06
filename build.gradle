@@ -1,0 +1,26 @@
+group 'prv.zielony.spark.contious.applications.scalar'
+
+version '1.0'
+
+apply plugin: 'scala'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.1.0'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.8'
+    compile group: 'org.apache.spark', name: 'spark-sql-kafka-0-10_2.11', version: '2.1.0'
+    compile group: 'org.apache.spark', name: 'spark-mllib_2.11', version: '2.1.0'
+    compile group: 'org.apache.spark', name: 'spark-graphx_2.11', version: '2.1.0'
+    compile(group: 'com.typesafe.play', name: 'play-json_2.11', version: '2.5.13'){
+        exclude group: 'com.fasterxml.jackson.core'
+    }
+
+    testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '3.0.0'
+    testCompile group: 'org.scalacheck', name: 'scalacheck_2.11', version: '1.13.2'
+    testCompile group: 'net.manub', name: 'scalatest-embedded-kafka_2.11', version: '0.10.0'
+}
+
